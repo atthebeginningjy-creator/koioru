@@ -85,7 +85,6 @@
       margin-bottom: 24px;
     }
 
-    /* オルゴール周囲の後光エフェクト */
     .music-box-glow {
       position: absolute;
       inset: -15px;
@@ -103,7 +102,6 @@
       z-index: 2;
     }
 
-    /* 音符アニメーション */
     .floating-note {
       position: absolute;
       color: var(--gold-light);
@@ -258,7 +256,6 @@
       box-shadow: 0 0 14px rgba(255, 215, 0, 0.3);
     }
 
-    /* 縦長メインビジュアルに合わせて見切れず全体が入るフレーム */
     .jacket-frame {
       position: relative;
       width: 100%;
@@ -310,25 +307,38 @@
     /* ==========================================
        3. 楽曲リンクセクション (Music)
     ========================================== */
-    .music-desc {
+    .release-announce-Banner {
       text-align: center;
-      font-size: 0.9rem;
+      background: linear-gradient(90deg, rgba(255,215,0,0.05) 0%, rgba(255,215,0,0.22) 50%, rgba(255,215,0,0.05) 100%);
+      border-top: 1px solid rgba(255, 215, 0, 0.45);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.45);
+      padding: 8px 12px;
       margin-bottom: 20px;
-      color: var(--text-sub);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--gold-light);
+      letter-spacing: 0.12em;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .music-track-item {
+      margin-bottom: 18px;
+    }
+
+    .music-track-item:last-child {
+      margin-bottom: 0;
     }
 
     .gold-btn {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 4px;
       width: 100%;
-      padding: 16px 20px;
+      padding: 15px 20px;
       border-radius: 999px;
       font-family: 'Shippori Mincho', serif;
-      font-size: 1.02rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
       text-decoration: none;
       color: #240b36;
       background: linear-gradient(135deg, #fff6c5 0%, #ffd700 50%, #e6ac00 100%);
@@ -336,6 +346,25 @@
       position: relative;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gold-btn-main {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.04rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .gold-btn-sub {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #4a154b;
+      background: rgba(255, 255, 255, 0.65);
+      padding: 2px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.1em;
     }
 
     .gold-btn::after {
@@ -355,30 +384,80 @@
       box-shadow: 0 10px 26px rgba(255, 215, 0, 0.65), inset 0 2px 4px rgba(255, 255, 255, 0.9);
     }
 
-    .gold-btn:active {
-      transform: translateY(-1px);
+    /* 限定Music解放予定ボックス */
+    .bonus-music-box {
+      background: rgba(20, 6, 32, 0.42);
+      border: 1px dashed rgba(255, 215, 0, 0.55);
+      border-radius: 16px;
+      padding: 16px 18px;
+      text-align: center;
+      position: relative;
+    }
+
+    .bonus-music-badge {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: #240b36;
+      background: var(--gold-light);
+      padding: 2px 12px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .bonus-music-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .bonus-music-note {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      opacity: 0.9;
     }
 
     /* ==========================================
        4. メッセージセクション (Message)
     ========================================== */
     .message-box {
-      background: rgba(20, 6, 32, 0.35);
-      border: 1px solid rgba(255, 215, 0, 0.25);
+      background: rgba(20, 6, 32, 0.4);
+      border: 1px solid rgba(255, 215, 0, 0.28);
       border-radius: 14px;
-      padding: 22px 18px;
+      padding: 24px 20px;
       font-size: 0.94rem;
-      line-height: 2;
+      line-height: 2.05;
       color: #fff9fc;
       letter-spacing: 0.04em;
     }
 
     .message-box p + p {
-      margin-top: 14px;
+      margin-top: 16px;
+    }
+
+    .message-highlight {
+      background: linear-gradient(transparent 65%, rgba(255, 215, 0, 0.35) 65%);
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .live-info-mini {
+      margin: 18px 0;
+      padding: 14px 16px;
+      background: rgba(255, 215, 0, 0.08);
+      border-left: 3px solid var(--gold-primary);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--gold-light);
     }
 
     .message-signature {
-      margin-top: 20px;
+      margin-top: 24px;
       text-align: right;
       font-weight: 600;
       color: var(--gold-light);
@@ -574,7 +653,6 @@
       
       <div class="jacket-frame">
         <div class="jacket-inner">
-          <!-- アップロードいただいたメインビジュアルを設定 -->
           <img src="きらめく「恋するオルゴール」ライブポスター.png" alt="恋するオルゴール メインビジュアル">
         </div>
       </div>
@@ -592,14 +670,33 @@
         <h2 class="section-title-en">Music</h2>
         <div class="section-divider"></div>
       </div>
-      <p class="music-desc">
-        限定特典音源・配信リンクはこちらよりお楽しみいただけます。
-      </p>
-      <!-- ▼ リンク決定後に href を差し替えます ▼ -->
-      <a href="#listen" class="gold-btn">
-        <span>♪</span>
-        <span>『恋するオルゴール』を聴く</span>
-      </a>
+
+      <div class="release-announce-Banner">
+        ✦ 11月3日（火・祝）より音源解放！ ✦
+      </div>
+
+      <!-- メイン楽曲ボタン -->
+      <div class="music-track-item">
+        <!-- ▼ 11月3日の解放時に href="#listen" を実際のURLに変更してください ▼ -->
+        <a href="#listen" class="gold-btn">
+          <div class="gold-btn-main">
+            <span>♪</span>
+            <span>『恋するオルゴール』を聴く</span>
+          </div>
+          <span class="gold-btn-sub">🔒 11月3日より解放</span>
+        </a>
+      </div>
+
+      <!-- 限定Music 解放予定枠 -->
+      <div class="music-track-item">
+        <div class="bonus-music-box">
+          <span class="bonus-music-badge">SPECIAL BONUS TRACK</span>
+          <div class="bonus-music-title">✧ 限定Musicも解放予定 ✧</div>
+          <p class="bonus-music-note">
+            ここでしか聴けない特別音源も順次解放いたします。<br>どうぞお楽しみに！
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- 4. メッセージセクション (Message) -->
@@ -610,13 +707,29 @@
       </div>
       <div class="message-box">
         <p>
-          いつも温かい応援を本当にありがとうございます。<br>
-          第1章から始まった4部作の物語も、いよいよこの『恋するオルゴール』で最終章を迎えました。
+          『恋するオルゴール』4部作を最後まで聴いてくださり、本当にありがとうございます！<br>
+          第1作から始まり、4つの物語を皆さんと一緒に紡いでこられたこと、心から感謝の気持ちでいっぱいです。
         </p>
         <p>
-          これまでのすべての想いを込めて…そして、これからも一緒に物語の続きを奏でていけますように。<br>
-          オルゴールのゼンマイを巻くたび、いつでもあのきらめきの中で会いましょう！
+          そして、この4部作の集大成となる<span class="message-highlight">完結記念ラストライブを来年2027年1月9日（土）に開催</span>いたします！<br>
+          これまで積み重ねてきたすべての想いを込めた最高のステージをお届けしますので、ぜひ会場でお待ちしています。
         </p>
+
+        <div class="live-info-mini">
+          <strong>✦ 4部作完結記念 ONE MAN LIVE ✦</strong><br>
+          日程：2027年1月9日（土）昼・夜2部制<br>
+          会場：川崎市国際交流センターホール
+        </div>
+
+        <p>
+          さらに……この1月9日のワンマンライブで<span class="message-highlight">目標動員数をクリアすることができれば、「第二章」としての新たな活動</span>が始まるかもしれません！<br>
+          「この日を、未来への約束に。」という言葉通り、皆さんと一緒に物語の続きを奏でていきたいと強く願っています。
+        </p>
+        <p>
+          いつもたくさんの温かい応援を本当にありがとうございます。<br>
+          これからも私たちの夢の続きを、どうか一緒に見届けてください。引き続き応援をよろしくお願いいたします！
+        </p>
+
         <div class="message-signature">
           オタクのいちごさん（通山栞・米沢のぞみ）より
         </div>
